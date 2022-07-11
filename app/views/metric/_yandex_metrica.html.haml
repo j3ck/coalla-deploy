@@ -1,0 +1,15 @@
+-# counter_id - ID счетчика в системе Yandex
+- if Rails.env.production?
+  %div{style: 'display:none;'}
+    :javascript
+      (function(w, c) {
+        (w[c] = w[c] || []).push(function() {
+          try {
+            w.yaCounter#{counter_id} = new Ya.Metrika({id:#{counter_id}, enableAll: true, webvisor:true});
+          } catch(e) { }
+        });
+      })(window, 'yandex_metrika_callbacks');
+  %script{src: '//mc.yandex.ru/metrika/watch.js', type: 'text/javascript', defer: 'defer'}
+  %noscript
+    %div
+      %img{src: "//mc.yandex.ru/watch/#{counter_id}", style: 'position:absolute; left:-9999px;', alt: ''}

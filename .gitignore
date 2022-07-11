@@ -1,0 +1,11 @@
+.idea
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+public/uploads/
+Gemfile.lock
+*.swp
+.DS_Store
+*.gem
+pkg/*
